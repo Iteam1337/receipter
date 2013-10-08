@@ -1,5 +1,29 @@
+<<<<<<< HEAD
 bower_components
 
 www/css
 www/js
 www/cordova-app-hello-world*
+=======
+# Xcode
+.DS_Store
+*/build/*
+*.pbxuser
+!default.pbxuser
+*.mode1v3
+!default.mode1v3
+*.mode2v3
+!default.mode2v3
+*.perspectivev3
+!default.perspectivev3
+xcuserdata
+profile
+*.moved-aside
+DerivedData
+.idea/
+*.hmap
+*.xccheckout
+
+#CocoaPods
+Pods
+>>>>>>> 44983a3aa7dc1991e6e3136e6228e118b73cf9eb
