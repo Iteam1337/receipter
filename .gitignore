@@ -1,10 +1,9 @@
-<<<<<<< HEAD
 bower_components
 
 www/css
 www/js
 www/cordova-app-hello-world*
-=======
+
 # Xcode
 .DS_Store
 */build/*
@@ -26,4 +25,3 @@ DerivedData
 
 #CocoaPods
 Pods
->>>>>>> 44983a3aa7dc1991e6e3136e6228e118b73cf9eb
