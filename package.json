@@ -1,0 +1,27 @@
+{
+  "name": "receipter",
+  "version": "0.0.0",
+  "description": "receipter =========",
+  "main": "index.js",
+  "scripts": {
+    "postinstall": "node node_modules/bower/bin/bower install",
+    "test": "grunt test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/Iteam1337/receipter.git"
+  },
+  "author": "",
+  "license": "MIT",
+  "gitHead": "0651011ce36aba84e9342c5a787ac0458d13b3bf",
+  "readmeFilename": "README.md",
+  "devDependencies": {
+    "bower": "~1.2.7",
+    "sinon": "~1.7.3",
+    "grunt": "~0.4.1",
+    "grunt-contrib-jshint": "~0.6.4",
+    "grunt-contrib-concat": "~0.3.0",
+    "grunt-mocha": "~0.4.1",
+    "grunt-contrib-watch": "~0.5.3"
+  }
+}
