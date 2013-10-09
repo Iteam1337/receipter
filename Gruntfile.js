@@ -5,15 +5,33 @@ module.exports = function(grunt) {
     pkg: grunt.file.readJSON('package.json'),
 
     concat: {
-      dist: {
+      app: {
         src: ['script/**/*.js'],
         dest: 'www/js/<%= pkg.name %>.js'
+      },
+      components: {
+        src: [
+          'bower_components/angular-phonegap/src/PhoneGap.js',
+          'bower_components/angular-phonegap/src/plugins/Notification.js',
+          'bower_components/angular-phonegap/src/plugins/Splashscreen.js'
+        ],
+        dest: 'www/js/components.js'
+      },
+      vendor: {
+        src: [
+          'bower_components/angular/angular.js',
+          'bower_components/angular-touch/angular-touch.js',
+          'bower_components/angular-animate/angular-animate.js'
+        ],
+        dest: 'www/js/vendor.js'
       }
     },
+
     jshint: {
       beforeconcat: ['script/**/*.js'],
-      afterconcat: ['<%= concat.dist.dest %>']
+      afterconcat: ['<%= concat.app.dest %>']
     },
+
     mocha: {
       client: {
         // Test files
@@ -38,14 +56,40 @@ module.exports = function(grunt) {
         }
       }
     },
+
+    less: {
+      development: {
+        options: {
+          paths: ["less"]
+        },
+        files: {
+          "www/css/<%= pkg.name %>.css": "less/main.less"
+        }
+      }
+    },
+
     watch: {
-      scripts: {
-        files: ['script/**/*.js'],
-        tasks: ['test','build'],
+      less: {
+        files: ['less/**/*.less'],
+        tasks: ['less'],
         options: {
           spawn: false,
         },
       },
+      scripts: {
+        files: ['script/**/*.js'],
+        tasks: ['test', 'concat:app'],
+        options: {
+          spawn: false,
+        },
+      },
+      test: {
+        files: ['test/*.html', 'test/spec/**/*.js'],
+        tasks: ['test'],
+        options: {
+          spawn: false,
+        },
+      }
     }
   });
 
@@ -53,10 +97,11 @@ module.exports = function(grunt) {
   grunt.loadNpmTasks('grunt-contrib-jshint');
   grunt.loadNpmTasks('grunt-mocha');
   grunt.loadNpmTasks('grunt-contrib-concat');
+  grunt.loadNpmTasks('grunt-contrib-less');
   grunt.loadNpmTasks('grunt-contrib-watch');
 
   // Default task(s).
   grunt.registerTask('test', ['jshint', 'mocha']);
-  grunt.registerTask('build', ['concat']);
+  grunt.registerTask('build', ['less', 'concat']);
   grunt.registerTask('default', ['test', 'build', 'watch']);
 };

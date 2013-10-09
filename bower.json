@@ -17,11 +17,12 @@
   "dependencies": {
     "angular": "~1.2.0-rc.2",
     "angular-animate": "~1.2.0-rc.2",
-    "bootstrap": "~3.0.0"
+    "angular-phonegap": "git@github.com:JohanObrink/angular-phonegap.git",
+    "bootstrap": "~3.0.0",
+    "angular-touch": "~1.2.0-rc.2"
   },
   "devDependencies": {
     "angular-mocks": "~1.2.0-rc.2",
-    "mocha": "~1.13.0",
     "chai": "~1.8.0"
   },
   "resolutions": {
