@@ -1,6 +1,7 @@
 bower_components
 node_modules
 
+platforms
 www/css
 www/js
 www/cordova-app-hello-world*
