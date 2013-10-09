@@ -23,5 +23,8 @@
     "grunt-contrib-concat": "~0.3.0",
     "grunt-mocha": "~0.4.1",
     "grunt-contrib-watch": "~0.5.3"
+  },
+  "dependencies": {
+    "chai": "~1.8.0"
   }
 }

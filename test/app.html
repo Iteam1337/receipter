@@ -1,0 +1,36 @@
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>App Tests</title>
+  <link rel="stylesheet" href="../node_modules/grunt-mocha/node_modules/mocha/mocha.css" />
+
+  <script src="../node_modules/chai/chai.js"></script>
+  <script src="../node_modules/sinon/pkg/sinon.js"></script>
+  <script src="../node_modules/grunt-mocha/node_modules/mocha/mocha.js"></script>
+  
+  <script src="../bower_components/angular/angular.js"></script>
+
+  <script>
+    mocha.setup('bdd');
+    var expect = chai.expect;
+  </script>
+  <script src="../bower_components/angular-mocks/angular-mocks.js"></script>
+
+  <!-- files -->
+  <script src="../script/app.js"></script>
+
+  <!-- specs -->
+  <script src="spec/app-tests.js"></script>
+
+  <script>
+    window.onload = function() {
+      if (navigator.userAgent.indexOf('PhantomJS') < 0) {
+        mocha.run();
+      }
+    };
+  </script>
+</head>
+<body>
+  <div id="mocha"></div>
+</body>
+</html>
