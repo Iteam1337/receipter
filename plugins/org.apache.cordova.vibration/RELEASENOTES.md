@@ -20,15 +20,20 @@
 -->
 # Release Notes
 
-### 0.2.2 (Sept 25, 2013)
+### 0.3.0 (Sept 5, 2013)
+* Initial FirefoxOS support
+* [CB-4661] VIBRATE permission for Android
+
+### 0.3.2 (Sept 25, 2013)
 * CB-4889 bumping&resetting version
-* CB-4889 renaming org.apache.cordova.core.splashscreen to org.apache.cordova.splashscreen
+* CB-4889 renaming org.apache.cordova.core.vibration to org.apache.cordova.vibration
 * Rename CHANGELOG.md -> RELEASENOTES.md
-* [CB-4806] Update splashscreen image bounds for iOS 7
+* updated to work with ffos commandProxy
+* fixed plugin.xml for vibration
+* [CB-4593] [Blackberry10] Added vibration support for bb10
+* updated plugin to work with ffos
 * [CB-4752] Incremented plugin version on dev branch.
 
-### 0.2.3 (Oct 9, 2013)
-* [CB-4806] (Re-fix) Update splashscreen image bounds for iOS 7
-* [CB-4934] plugin-splashscreen should not show by default on Windows8
-* [CB-4929] plugin-splashscreen not loading proxy windows8
+### 0.3.3 (Oct 9, 2013)
+* add missing android namespace
 * [CB-4915] Incremented plugin version on dev branch.

@@ -1,8 +1,6 @@
 
-angular.module('receipter').controller('AppController', function($scope, $location) {
+angular.module('receipter').controller('AppController', function() {
 
   'use strict';
-  
-  console.log($location.path());
 
 });

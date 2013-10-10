@@ -8,20 +8,11 @@ module.exports = function(grunt) {
 
     // This concatenates all js files into three different dists
     // [pkg.name].js - contains all app specific code
-    // components.js - contains phonegap component wrappers for angular
     // vendor.js - contains all libs like angular
     concat: {
       app: {
         src: ['script/**/*.js'],
         dest: 'www/js/<%= pkg.name %>.js'
-      },
-      components: {
-        src: [
-          'bower_components/angular-phonegap/src/PhoneGapReady.js',
-          'bower_components/angular-phonegap/src/plugins/Notification.js',
-          'bower_components/angular-phonegap/src/plugins/Splashscreen.js'
-        ],
-        dest: 'www/js/components.js'
       },
       vendor: {
         src: [
@@ -144,8 +135,8 @@ module.exports = function(grunt) {
 
     // watches changes to the file system to rerun tasks
     watch: {
-      html: {
-        files: ['www/**/*.html'],
+      www: {
+        files: ['www/**/*.*'],
         tasks: ['copy'],
         options: {
           spawn: false,
@@ -171,6 +162,10 @@ module.exports = function(grunt) {
       test: {
         files: ['test/*.html', 'test/spec/**/*.js'],
         tasks: ['test']
+      },
+      plugins: {
+        files: ['plugins/**/*'],
+        tasks: ['shell:build']
       }
     }
   });

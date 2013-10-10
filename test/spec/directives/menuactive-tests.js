@@ -103,4 +103,11 @@ describe('menuactive', function() {
     expect(elem.hasClass('foo'), 'has class foo').to.be.true;
   });
 
+  it('removes # from comparison', function() {
+    path.returns('/foo');
+    var elem = $compile('<li menuactive="bar"><i></i><span><a href="#/foo/">Hello</a></span></li>')(scope);
+    scope.$digest();
+    expect(elem.hasClass('bar'), 'has class bar').to.be.true;
+  });
+
 });

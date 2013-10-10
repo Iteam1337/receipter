@@ -1,6 +1,10 @@
-<div class="row" ng-controller="UploadController">
+<div class="row" ng-controller="UploadController as upload">
   <div class="well">
-    <img src="" width="100%" />
-    <button class="btn btn-success">Click</button>
+    <img ng-src="{{imagesource}}" width="100%" />
+    <button class="btn btn-success" ng-click="upload.alert()">alert</button>
+    <button class="btn btn-success" ng-click="upload.confirm()">confirm</button>
+    <button class="btn btn-success" ng-click="upload.prompt()">prompt</button>
+    <button class="btn btn-success" ng-click="upload.beep()">beep</button>
+    <button class="btn btn-success" ng-click="upload.vibrate()">vibrate</button>
   </div>
 </div>

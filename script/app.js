@@ -1,11 +1,10 @@
 
 angular
-  .module('receipter', [ 'ngTouch', 'ngAnimate', 'ui.router', 'PhoneGap' ])
+  .module('receipter', [ 'ngTouch', 'ngAnimate', 'ui.router' ])
   .config(function($locationProvider, $stateProvider, $urlRouterProvider) {
 
     'use strict';
-
-    $locationProvider.html5Mode(true);
+    $locationProvider.html5Mode(false);
 
     $urlRouterProvider.otherwise('/');
 
