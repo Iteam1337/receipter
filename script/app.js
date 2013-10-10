@@ -14,12 +14,8 @@ angular
         url: '/',
         templateUrl: 'partials/home.html'
       })
-      .state('foo', {
-        url: '/foo',
-        templateUrl: 'partials/foo.html'
-      })
-      .state('bar', {
-        url: '/bar',
-        templateUrl: 'partials/bar.html'
+      .state('upload', {
+        url: '/upload',
+        templateUrl: 'partials/upload.html'
       });
   });
