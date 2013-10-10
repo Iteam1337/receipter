@@ -16,6 +16,9 @@
     <feature name="SplashScreen">
         <param name="ios-package" value="CDVSplashScreen" />
     </feature>
+    <feature name="Camera">
+        <param name="ios-package" value="CDVCamera" />
+    </feature>
 
     <content src="index.html" />
     <access origin="*" />
