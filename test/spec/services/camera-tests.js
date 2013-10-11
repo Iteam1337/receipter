@@ -89,7 +89,7 @@ describe('camera', function() {
       camera.getPicture();
       expect(appCamera.getPicture.firstCall.args[2]).to.eql({
         quality: 50,
-        pictureSourceType: camera.PictureSourceType.CAMERA,
+        sourceType: camera.PictureSourceType.CAMERA,
         destinationType: camera.DestinationType.DATA_URL,
         encodingType: camera.EncodingType.JPEG,
         mediaType: camera.MediaType.ALLMEDIA,
@@ -102,7 +102,7 @@ describe('camera', function() {
       });
       expect(appCamera.getPicture.firstCall.args[2]).to.eql({
         quality: 50,
-        pictureSourceType: camera.PictureSourceType.CAMERA,
+        sourceType: camera.PictureSourceType.CAMERA,
         destinationType: camera.DestinationType.DATA_URL,
         encodingType: camera.EncodingType.JPEG,
         mediaType: camera.MediaType.VIDEO,
@@ -115,7 +115,7 @@ describe('camera', function() {
       });
       var options = appCamera.getPicture.firstCall.args[2];
 
-      expect(options.pictureSourceType, 'pictureSourceType').to.eql(camera.PictureSourceType.CAMERA);
+      expect(options.sourceType, 'pictureSourceType').to.eql(camera.PictureSourceType.CAMERA);
       expect(options.destinationType, 'destinationType').to.eql(camera.DestinationType.DATA_URL);
       expect(options.encodingType, 'encodingType').to.eql(camera.EncodingType.PNG);
       expect(options.mediaType, 'mediaType').to.eql(camera.MediaType.ALLMEDIA);
