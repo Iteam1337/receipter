@@ -7,9 +7,11 @@ angular.module('receipter').service('notification', function($window, $rootScope
         var self = this,
           args = Array.prototype.slice.call(arguments);
 
-        $rootScope.$apply(function () {
-          callback.apply(self, args);
-        });
+        if(callback) {
+          $rootScope.$apply(function () {
+            callback.apply(self, args);
+          });
+        }
       }, title, buttonName);
     },
     confirm: function(message, callback, title, buttonLabels) {
@@ -17,9 +19,11 @@ angular.module('receipter').service('notification', function($window, $rootScope
         var self = this,
           args = Array.prototype.slice.call(arguments);
 
-        $rootScope.$apply(function () {
-          callback.apply(self, args);
-        });
+        if(callback) {
+          $rootScope.$apply(function () {
+            callback.apply(self, args);
+          });
+        }
       }, title, buttonLabels);
     },
     prompt: function(message, callback, title, buttonLabels, defaultText) {
@@ -27,9 +31,11 @@ angular.module('receipter').service('notification', function($window, $rootScope
         var self = this,
           args = Array.prototype.slice.call(arguments);
 
-        $rootScope.$apply(function() {
-          callback.apply(self, args);
-        });
+        if(callback) {
+          $rootScope.$apply(function() {
+            callback.apply(self, args);
+          });
+        }
       }, title, buttomLabels, defaultText);
     },
     beep: function(times) {
