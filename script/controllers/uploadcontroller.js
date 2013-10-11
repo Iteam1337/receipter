@@ -48,7 +48,7 @@ angular.module('receipter').controller('UploadController', function($scope, noti
       },
       function() {},
       {
-        pictureSourceType: camera.PictureSourceType.PHOTOLIBRARY
+        sourceType: camera.PictureSourceType.SAVEDPHOTOALBUM
       });
   };
 
