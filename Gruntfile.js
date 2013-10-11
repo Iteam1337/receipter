@@ -38,6 +38,7 @@ module.exports = function(grunt) {
         globalstrict: true,
         newcap: false,
         laxcomma: true,
+        sub: true,
         globals: {
           $: true,
           angular: true,

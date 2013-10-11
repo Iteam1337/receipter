@@ -30,50 +30,64 @@ angular.module('receipter').service('camera', function($window, $rootScope) {
     }
   };
 
-  return angular.extend(Camera, {
-    getPicture: function(success, error, options) {
-      $window.navigator.camera.getPicture(
-        function () {
-          var self = this
-            , args = Array.prototype.slice.call(arguments);
-          if(success) {
-            $rootScope.$apply(function() {
-              success.apply(self, args);
-            });
-          }
-        },
-        function() {
-          var self = this
-            , args = Array.prototype.slice.call(arguments);
-          if(error) {
-            $rootScope.$apply(function() {
-              error.apply(self, args);
-            });
-          }
-        },
-        options);
-    },
-    cleanup: function(success, error) {
-      $window.navigator.camera.cleanup(
-        function () {
-          var self = this
-            , args = Array.prototype.slice.call(arguments);
-          if(success) {
-            $rootScope.$apply(function() {
-              success.apply(self, args);
-            });
-          }
-        },
-        function() {
-          var self = this
-            , args = Array.prototype.slice.call(arguments);
-          if(error) {
-            $rootScope.$apply(function() {
-              error.apply(self, args);
-            });
-          }
-        });
-    });
+  var defaults = {
+    quality: 50,
+    pictureSourceType: Camera.PictureSourceType.CAMERA,
+    destinationType: Camera.DestinationType.DATA_URL,
+    encodingType: Camera.EncodingType.JPEG,
+    mediaType: Camera.MediaType.ALLMEDIA,
+    direction: Camera.Direction.FRONT
   };
+
+  function replaceOptions(options, defaults) {
+    Object.keys(defaults).forEach(function(key) {
+      if(!options[key]) {
+        options[key] = defaults[key];
+      }
+    });
+    return options;
+  }
+
+  function callback(callbackFunction, self, _arguments) {
+    if(callbackFunction) {
+      var args = Array.prototype.slice.call(_arguments);
+      $rootScope.$apply(function() {
+        callbackFunction.apply(self, args);
+      });
+    }
+  }
+
+  function getPicture(success, error, options) {
+
+    options = replaceOptions(options || {}, defaults);
+    
+    if(options.encodingType === Camera.EncodingType.PNG) {
+      delete options['quality'];
+    }
+
+    $window.navigator.camera.getPicture(
+      function () {
+        callback(success, this, arguments);
+      },
+      function() {
+        callback(error, this, arguments);
+      },
+      options);
+  }
+
+  function cleanup(success, error) {
+    $window.navigator.camera.cleanup(
+      function () {
+        callback(success, this, arguments);
+      },
+      function() {
+        callback(error, this, arguments);
+      });
+  }
+
+  return angular.extend(Camera, {
+    getPicture: getPicture,
+    cleanup: cleanup
+  });
 
 });
