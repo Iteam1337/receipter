@@ -41,7 +41,7 @@ angular.module('receipter').service('camera', function($window, $rootScope) {
 
   function replaceOptions(options, defaults) {
     Object.keys(defaults).forEach(function(key) {
-      if(!options[key]) {
+      if('number' !== typeof options[key]) {
         options[key] = defaults[key];
       }
     });
