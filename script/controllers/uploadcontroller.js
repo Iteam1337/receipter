@@ -1,5 +1,5 @@
 
-angular.module('receipter').controller('UploadController', function($scope, notification) {
+angular.module('receipter').controller('UploadController', function($scope, notification, camera) {
   'use strict';
   //data:image/jpeg;base64,{{imagedata}} 
 
@@ -29,6 +29,27 @@ angular.module('receipter').controller('UploadController', function($scope, noti
 
   this.vibrate = function() {
     notification.vibrate(500);
+  };
+
+  this.newPicture = function() {
+    camera.getPicture(
+      function(data) {
+        $scope.imagesource = 'data:image/jpeg;base64,' + data;
+        camera.cleanup();
+      },
+      function() {});
+  };
+
+  this.pictureFromLibrary = function() {
+    camera.getPicture(
+      function(data) {
+        $scope.imagesource = 'data:image/jpeg;base64,' + data;
+        camera.cleanup();
+      },
+      function() {},
+      {
+        pictureSourceType: camera.PictureSourceType.PHOTOLIBRARY
+      });
   };
 
 });
