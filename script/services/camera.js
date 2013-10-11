@@ -32,7 +32,7 @@ angular.module('receipter').service('camera', function($window, $rootScope) {
 
   var defaults = {
     quality: 50,
-    pictureSourceType: Camera.PictureSourceType.CAMERA,
+    sourceType: Camera.PictureSourceType.CAMERA,
     destinationType: Camera.DestinationType.DATA_URL,
     encodingType: Camera.EncodingType.JPEG,
     mediaType: Camera.MediaType.ALLMEDIA,
