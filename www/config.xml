@@ -20,9 +20,6 @@
     <content src="index.html" />
     <access origin="*" />
 
-    <preference name="splashscreen", "splash" />
-    <preference name="splashScreenDelay", 1000 />
-    <preference name="permissions" value="none" />
     <preference name="orientation" value="default" />
     <preference name="target-device" value="universal" />
     <preference name="fullscreen" value="true" />
