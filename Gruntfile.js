@@ -111,7 +111,7 @@ module.exports = function(grunt) {
     connect: {
       ios: {
         options: {
-          port: 3000,
+          port: 5000,
           base: 'platforms/ios/www',
           hostname: '*',
           livereload: true,
