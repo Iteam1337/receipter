@@ -17,7 +17,7 @@ module.exports = function(grunt) {
       vendor: {
         src: [
           'bower_components/angular/angular.js',
-          'bower_components/angular-ui-router/release/angular-ui-router.js',
+          'bower_components/angular-route/angular-route.js',
           'bower_components/angular-touch/angular-touch.js',
           'bower_components/angular-animate/angular-animate.js'
         ],
@@ -114,21 +114,6 @@ module.exports = function(grunt) {
           port: 3000,
           base: 'platforms/ios/www',
           hostname: '*',
-
-          // point all routes to '/'
-          middleware: function(connect, options) {
-            return [
-              connect.static(options.base),
-              function(req, res, next) {
-                var url = options.base + '/index.html';
-                fs.readFile(url, 'utf8', function(e, html) {
-                  res.setHeader('Content-Type', 'text/html; charset=utf-8');
-                  res.end(html);
-                });
-              } 
-            ];
-          },
-
           livereload: true,
           open: true
         }

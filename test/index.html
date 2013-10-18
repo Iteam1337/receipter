@@ -1,0 +1,70 @@
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>App Tests</title>
+  <link rel="stylesheet" href="../node_modules/grunt-mocha/node_modules/mocha/mocha.css" />
+
+  <script src="../node_modules/chai/chai.js"></script>
+  <script src="../node_modules/sinon/pkg/sinon.js"></script>
+  <script src="../node_modules/sinon-chai/lib/sinon-chai.js"></script>
+  <script src="../node_modules/grunt-mocha/node_modules/mocha/mocha.js"></script>
+  
+  <script src="../bower_components/angular/angular.js"></script>
+  <script src="../bower_components/angular-touch/angular-touch.js"></script>
+  <script src="../bower_components/angular-route/angular-route.js"></script>
+  <script src="../bower_components/angular-animate/angular-animate.js"></script>
+
+  <script>
+    mocha.setup('bdd');
+    var expect = chai.expect;
+  </script>
+  <script src="../bower_components/angular-mocks/angular-mocks.js"></script>
+
+
+
+  <!-- files -->
+  <!-- app -->
+  <script src="../script/app.js"></script>
+
+  <!-- controllers -->
+  <script src="../script/controllers/appcontroller.js"></script>
+  <script src="../script/controllers/homecontroller.js"></script>
+  <script src="../script/controllers/uploadcontroller.js"></script>
+
+  <!-- services -->
+  <script src="../script/services/camera.js"></script>
+  <script src="../script/services/notification.js"></script>
+
+  <!-- directives -->
+  <script src="../script/directives/menuactive.js"></script>
+
+
+
+  <!-- specs -->
+  <!-- app -->
+  <script src="spec/app-tests.js"></script>
+
+  <!-- controllers -->
+  <script src="spec/controllers/appcontroller-tests.js"></script>
+  <script src="spec/controllers/homecontroller-tests.js"></script>
+  <script src="spec/controllers/uploadcontroller-tests.js"></script>
+
+  <!-- services -->
+  <script src="spec/services/camera-tests.js"></script>
+  <script src="spec/services/notification-tests.js"></script>
+
+  <!-- directives -->
+  <script src="spec/directives/menuactive-tests.js"></script>
+
+  <script>
+    window.onload = function() {
+      if (navigator.userAgent.indexOf('PhantomJS') < 0) {
+        mocha.run();
+      }
+    };
+  </script>
+</head>
+<body>
+  <div id="mocha"></div>
+</body>
+</html>

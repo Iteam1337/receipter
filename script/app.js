@@ -1,20 +1,21 @@
 
 angular
-  .module('receipter', [ 'ngTouch', 'ngAnimate', 'ui.router' ])
-  .config(function($locationProvider, $stateProvider, $urlRouterProvider) {
+  .module('receipter', [ 'ngTouch', 'ngAnimate', 'ngRoute' ])
+  .config(function($locationProvider, $routeProvider) {
 
     'use strict';
     $locationProvider.html5Mode(false);
 
-    $urlRouterProvider.otherwise('/');
-
-    $stateProvider
-      .state('home', {
-        url: '/',
-        templateUrl: 'partials/home.html'
+    $routeProvider
+      .when('/', {
+        templateUrl: 'partials/home.html',
+        controller: 'HomeController'
       })
-      .state('upload', {
-        url: '/upload',
-        templateUrl: 'partials/upload.html'
+      .when('/upload', {
+        templateUrl: 'partials/upload.html',
+        controller: 'UploadController'
+      })
+      .otherwise({
+        redirectTo: '/'
       });
   });

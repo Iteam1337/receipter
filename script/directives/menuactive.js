@@ -30,7 +30,7 @@ angular.module('receipter').directive('menuactive', function($location) {
       
       var setSelected = function() {
         var url = $location.path().replace(trailingSlash, '');
-        var href = getHref(element).replace(trailingSlash, '').replace('#', '');
+        var href = getHref(element).replace(trailingSlash, '').replace('/#', '').replace('#', '');
 
         var isSelected = (href === '' && url === '') || (href !== '' && url.indexOf(href) === 0);
         if(isSelected) {
