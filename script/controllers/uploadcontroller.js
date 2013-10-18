@@ -5,7 +5,7 @@ angular.module('receipter').controller('UploadController', function($scope, noti
 
   $scope.imagesource = 'img/shutter.png';
 
-  this.newPicture = function() {
+  $scope.newPicture = function() {
     camera.getPicture(
       function(data) {
         $scope.imagesource = 'data:image/jpeg;base64,' + data;
@@ -14,7 +14,7 @@ angular.module('receipter').controller('UploadController', function($scope, noti
       function() {});
   };
 
-  this.pictureFromLibrary = function() {
+  $scope.pictureFromLibrary = function() {
     camera.getPicture(
       function(data) {
         $scope.imagesource = 'data:image/jpeg;base64,' + data;
