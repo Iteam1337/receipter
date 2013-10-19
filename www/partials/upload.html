@@ -1,7 +1,27 @@
-<div class="row">
+<div class="upload row">
   <div class="well">
-    <img ng-src="{{imagesource}}" width="100%" />
-    <button class="btn btn-success" ng-click="newPicture()">New picture</button>
-    <button class="btn btn-success" ng-click="pictureFromLibrary()">Picture from library</button>
+    <ol class="steps">
+      <li class="picture">
+        <img ng-src="{{receipt.image}}" width="100%" />
+        <button class="btn btn-success" ng-click="newPicture()">New picture</button>
+        <button class="btn btn-success" ng-click="pictureFromLibrary()">Picture from library</button>
+        <button class="btn" ng-click="gotoStep('amount')">Next</button>
+      </li>
+      <li class="amount">
+        <input type="number" name="amount" />
+        <button class="btn" ng-model="receipt.amount" ng-click="gotoStep('client')">Next</button>
+      </li>
+      <li class="client">
+        <input type="text" name="client" />
+        <button class="btn" ng-model="receipt.client.name" ng-click="gotoStep('note')">Next</button>
+      </li>
+      <li class="note">
+        <textarea name="note"></textarea>
+        <button class="btn" ng-model="receipt.note" ng-click="gotoStep('upload')">Next</button>
+      </li>
+      <li class="upload">
+        <button class="btn" ng-click="upload()">Upload</button>
+      </li>
+    </ul>
   </div>
 </div>
