@@ -1,2 +1,15 @@
-<h1>Home</h1>
-<p>hej</p> 
+<div class="home row">
+  <h1>My receipts</h1>
+  <ul class="receipts">
+    <li ng-repeat="receipt in data.receipts" ng-class="{ active: receipt.selected }">
+      <a ng-click="select(receipt)">
+        <div class="name">{{receipt.client.name}} | {{receipt.name}}</div>
+        <div class="info">{{ receipt.amount | currency:'SEK ' }} | {{receipt.date | date:'yyyy-MM-dd HH:mm:ss' }}</div>
+      </a>
+      <div class="details">
+        <img src="data:image/jpeg;base64,{{receipt.image}}" />
+        <div class="note">{{receipt.note}}</div>
+      </div>
+    </li>
+  </ul>
+</div>
