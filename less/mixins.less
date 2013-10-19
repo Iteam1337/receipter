@@ -1,0 +1,64 @@
+// Set border-radius
+// @radius {px} - Number of pixels for radius
+//
+.border-radius(@radius:3px) {
+	-webkit-border-radius: @radius;
+	-moz-border-radius: @radius;
+	border-radius: @radius;
+}
+
+// Set translateX and translateY to position an
+// absolute positioned div in center
+// @x {%, px} - X value
+// @y {%, px} - Y value
+// 
+.translate-pos(@x, @y) {
+	-webkit-transform: translateX(@x) translateY(@y);
+	-moz-transform: translateX(@x) translateY(@y);
+	transform: translateX(@x) translateY(@y);
+}
+
+.translate-X(@x) {
+	-webkit-transform: translateX(@x);
+	-moz-transform: translateX(@x);
+	transform: translateX(@x);
+}
+
+// Double box-shadow
+// 
+.double-box-shadow(@shadow, @shadow2) {
+  -webkit-box-shadow: @shadow, @shadow2; // iOS <4.3 & Android <4.1
+  	 -moz-box-shadow: @shadow, @shadow2;
+          box-shadow: @shadow, @shadow2;
+}
+
+// Appearance
+//
+.appearance(@type:none) {
+	-webkit-appearance:@type;
+	-moz-appearance:@type;
+	appearance:@type;
+}
+
+// Adds a divider
+// @margin {px} - Margin
+// 
+.divider(@margin:20px 0) {
+	.box-shadow(0px 1px 0px rgba(255,255,255,0.08));
+	border-top:1px solid @divider;
+	margin:@margin;
+}
+
+// Rotate on Y-axis
+// @deg {#deg} - Number of degrees to rotate
+// 
+.rotateY(@deg) {
+	-webkit-transform:rotateY(@deg);
+	   -moz-transform:rotateY(@deg);
+	   		transform:rotateY(@deg);
+}
+
+.preserve3d() {
+	-webkit-transform-style: preserve-3d; /* Safari and Chrome */
+			transform-style: preserve-3d;
+}

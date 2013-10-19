@@ -1,0 +1,152 @@
+* {
+	box-sizing:border-box;
+}
+
+html, body {
+	-webkit-overflow-scrolling:touch;
+	height:100%;
+	overflow:hidden;
+}
+
+ul {
+	list-style:none;
+	margin:0;
+	padding:0;
+}
+
+a {
+	color:@grey;
+
+	&:hover {
+		color:@orange;
+		text-decoration:none;
+	}
+}
+
+.filter-list {
+
+	background:@grey;
+	color:#fff;
+	font-size:2em;
+	height:100%;
+	padding-left:40px;
+	position:fixed;
+	width:100%;
+
+	ul {
+		.translate-pos(0, -50%);
+		
+		position: absolute;
+		top:50%;
+		width:70%;
+
+		li {
+			margin-bottom:5px;
+			overflow:hidden;
+			text-overflow:ellipsis;
+			white-space:nowrap;
+		}
+	}
+}
+
+.main-view {
+	background:#fff;
+	height:100%;
+
+	.translate3d(0,0,0);
+	.transition(-webkit-transform 300ms ease);
+
+	&.hasFilter {
+		.box-shadow(0px 0px 10px rgba(33,33,33,0.8));
+		.translate3d(80%,10%,0);
+
+		height:80%;
+	}
+
+	header {
+		background:@grey;
+		color:#fff;
+		font-size:1.5em;
+		padding:25px 10px 10px;
+		position: fixed;
+		top:0;
+		width:100%;
+		z-index:1;
+
+		.filter {
+			left:10px;
+			position:absolute;
+			top:25px;
+		}
+
+		.title {
+			font-family: 'AvantGarde ExtraLight';
+			text-align:center;
+		}
+	}
+
+	main {
+		-webkit-overflow-scrolling:touch;
+		height:100%;
+		position: relative;
+		padding-bottom:70px;
+		padding-top:65px;
+		overflow-y:auto;
+
+		.container {
+			padding:=;
+		}
+
+		#receipts {
+			li {
+				border-bottom:1px solid #eee;
+				padding:10px;
+				position: relative;
+
+				.title {
+					font-size:1.2em;
+					font-weight:bold;
+				}
+
+				.date {
+					position:absolute;
+					right:10px;
+					top:10px;
+				}
+			}
+		}
+	}
+
+	footer {
+		background:#fff;
+		border:1px solid #eee;
+		bottom:0;
+		font-size:1.5em;
+		left:0;
+		padding:10px 0;
+		position:fixed;
+		width:100%;
+		z-index:1;
+
+		ul {
+			li {
+				float:left;
+				text-align:center;
+				width:49%;
+
+				&.active {
+					a {
+						color:@orange;
+					}
+				}
+
+				.nav-title {
+					color:@grey;
+					display:block;
+					font-family:'AvantGarde ExtraLight';
+					font-size:0.6em;
+				}
+			}
+		}
+	}
+}

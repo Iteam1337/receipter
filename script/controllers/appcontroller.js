@@ -3,6 +3,7 @@ angular.module('receipter').controller('AppController', function($scope) {
 
   'use strict';
 
+<<<<<<< HEAD
   $scope.data = {
     receipts: [
       {
@@ -39,6 +40,12 @@ angular.module('receipter').controller('AppController', function($scope) {
         note: 'IPA FTW!'
       }
     ]
+=======
+  $scope.clients = ['Iteam', 'Radical.Fm'];
+
+  $scope.filterClients = function (client) {
+    $scope.selectedClient = client;
+>>>>>>> 016aa75910f5b0be351a17df982679dcad62f192
   };
 
 });

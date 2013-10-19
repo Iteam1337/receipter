@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 <div class="home row">
   <h1>My receipts</h1>
   <ul class="receipts">
@@ -13,3 +14,12 @@
     </li>
   </ul>
 </div>
+=======
+<ul id="receipts">
+	<li ng-repeat="receipt in receipts | filter:selectedClient">
+		<div class="title">{{receipt.title}}</div>
+		<div class="date">{{receipt.date}}</div>
+		<div class="client">{{receipt.client}}</div>
+	</li>
+</ul>
+>>>>>>> 016aa75910f5b0be351a17df982679dcad62f192
