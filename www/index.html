@@ -21,9 +21,9 @@
         </li>
       </ul>
     </div>
-    <div class="main-view" ng-swipe-right="showFilter()" ng-class="{'hasFilter':filterView}" ng-swipe-left="showFilter()"> 
+    <div class="main-view" ng-class="{'hasFilter':filterView}"> 
       <header>
-        <div class="filter" ng-click="showFilter()">
+        <div class="filter" ng-click="showFilter()" ng-hide="isCamera">
           <div class="glyphicon glyphicon-list"></div>
         </div>
         <div class="title">Receipter</div>

@@ -22,7 +22,8 @@ angular.module('receipter').directive('menuactive', function($location) {
   return {
     restrict: 'A',
     scope: {
-      menuactive: '@'
+      menuactive: '@',
+      iscamera:'@'
     },
     link: function(scope, element) {
 

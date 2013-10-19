@@ -3,8 +3,7 @@
   ul.receipts {
 
     img {
-      max-width: 100px;
-      max-height: 100px;
+      max-width: 100%;
     }
     
     .details {
@@ -18,8 +17,12 @@
 
     li {
       border-bottom:1px solid #eee;
-      padding:10px;
       position: relative;
+
+      a {
+        display: inline-block;
+        padding:10px;
+      }
 
       .name {
         font-size:1.2em;
@@ -32,6 +35,12 @@
         position:absolute;
         right:10px;
         top:15px;
+      }
+
+      .note {
+        font-size:1em;
+        padding:20px;
+        text-align:center;
       }
     }
   }
