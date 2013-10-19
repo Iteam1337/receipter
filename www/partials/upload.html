@@ -1,26 +1,42 @@
 <div class="upload row">
   <div class="well">
     <ol class="steps">
-      <li class="picture">
-        <img ng-src="{{receipt.image}}" width="100%" />
-        <button class="btn btn-success" ng-click="newPicture()">New picture</button>
-        <button class="btn btn-success" ng-click="pictureFromLibrary()">Picture from library</button>
-        <button class="btn" ng-click="gotoStep('amount')">Next</button>
+      <li class="picture" ng-class="{ active: step=='picture' }">
+        <div class="name">Take picture</div>
+        <div class="step">
+          <img ng-src="{{receipt.image}}" width="100%" />
+          <button class="btn btn-success" ng-click="newPicture()">New picture</button>
+          <button class="btn btn-success" ng-click="pictureFromLibrary()">Picture from library</button>
+          <button class="btn" ng-click="gotoStep('info')">Next</button>
+        </div>
       </li>
-      <li class="amount">
-        <input type="number" name="amount" />
-        <button class="btn" ng-model="receipt.amount" ng-click="gotoStep('client')">Next</button>
+      <li class="info" ng-class="{ active: step=='info' }">
+        <div class="name">Enter content and amount on receipt</div>
+        <div class="step">
+          <input type="text" name="name" ng-model="receipt.name" />
+          <input type="number" name="amount" ng-model="receipt.amount" />
+          <button class="btn" ng-click="gotoStep('client')">Next</button>
+        </div>
       </li>
-      <li class="client">
-        <input type="text" name="client" />
-        <button class="btn" ng-model="receipt.client.name" ng-click="gotoStep('note')">Next</button>
+      <li class="client" ng-class="{ active: step=='client' }">
+        <div class="name">Select client</div>
+        <div class="step">
+          <input type="text" name="client" ng-model="receipt.client.name" />
+          <button class="btn" ng-click="gotoStep('note')">Next</button>
+        </div>
       </li>
-      <li class="note">
-        <textarea name="note"></textarea>
-        <button class="btn" ng-model="receipt.note" ng-click="gotoStep('upload')">Next</button>
+      <li class="note" ng-class="{ active: step=='note' }">
+        <div class="name">Notes</div>
+        <div class="step">
+          <textarea name="note" ng-model="receipt.note"></textarea>
+          <button class="btn" ng-click="gotoStep('upload')">Next</button>
+        </div>
       </li>
-      <li class="upload">
-        <button class="btn" ng-click="upload()">Upload</button>
+      <li class="upload" ng-class="{ active: step=='upload' }">
+        <div class="name">Upload</div>
+        <div class="step">
+          <button class="btn" ng-click="upload()">Upload</button>
+        </div>
       </li>
     </ul>
   </div>
