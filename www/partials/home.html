@@ -3,7 +3,8 @@
     <li ng-repeat="receipt in data.receipts | filter:selectedClient" ng-class="{ active: receipt.selected }">
       <a ng-click="select(receipt)">
         <div class="name">{{receipt.client.name}} | {{receipt.name}}</div>
-        <div class="info">{{ receipt.amount | currency:'SEK ' }} | {{receipt.date | date:'yyyy-MM-dd HH:mm:ss' }}</div>
+        <div class="info">{{ receipt.amount | currency:'SEK ' }}</div>
+        <span class="date">{{receipt.date | date:'yyyy-MM-dd HH:mm:ss' }}</span>
       </a>
       <div class="details">
         <img src="{{receipt.image}}" />

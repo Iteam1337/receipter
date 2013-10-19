@@ -27,4 +27,14 @@ describe('AppController', function() {
     });
   });
 
+  describe('#showFilter', function () {
+    it('should toggle the filter view', function () {
+
+      scope.filterView = false;
+      scope.showFilter();
+
+      expect(scope.filterView).to.equal(true);
+    });
+  });
+
 });

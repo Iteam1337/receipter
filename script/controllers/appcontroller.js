@@ -41,10 +41,15 @@ angular.module('receipter').controller('AppController', function($scope) {
     ]
   };
 
-  $scope.clients = ['TRR', 'Radical FM', 'Iteam'];
+  $scope.clients    = ['TRR', 'Radical FM', 'Iteam'];
+  $scope.filterView = false;
 
   $scope.filterClients = function (client) {
     $scope.selectedClient = client;
+  };
+
+  $scope.showFilter = function () {
+    $scope.filterView = $scope.filterView ? false : true;
   };
 
 });
