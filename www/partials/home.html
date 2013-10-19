@@ -1,2 +1,7 @@
-<h1>Home</h1>
-<p>hej</p> 
+<ul id="receipts">
+	<li ng-repeat="receipt in receipts | filter:selectedClient">
+		<div class="title">{{receipt.title}}</div>
+		<div class="date">{{receipt.date}}</div>
+		<div class="client">{{receipt.client}}</div>
+	</li>
+</ul>

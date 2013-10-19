@@ -4,23 +4,49 @@
     <meta charset="utf-8" />
     <meta name="format-detection" content="telephone=no" />
     <!-- WARNING: for iOS 7, remove the width=device-width and height=device-height attributes. See https://issues.apache.org/jira/browse/CB-4323 -->
+    <meta name="apple-mobile-web-app-capable" content="yes" />
     <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width, height=device-height, target-densitydpi=device-dpi" />
     <link rel="stylesheet" type="text/css" href="css/receipter.css" />
     <title>Receipter</title>
   </head>
   <body ng-controller="AppController">
-    <main>
-      <div class="container" ng-view>
-      </div>
-    </main>
-    <footer class="navbar nabvar-inverse navbar-fixed-bottom">
-      <nav class="container">
-        <ul class="nav nav-pills">
-          <li menuactive="active"><a href="#/">Home</a></li>
-          <li menuactive="active"><a href="#/upload">Upload</a></li>
-        </ul>
-      </nav>
-    </footer>
+    <div class="filter-list ng-cloak" ng-show="showFilter">
+      <ul>
+        <li ng-repeat="client in clients" ng-click="filterClients(client)">
+          {{client}}
+        </li>
+      </ul>
+    </div>
+    <div class="main-view" ng-swipe-right="showFilter = !showFilter" ng-init="showFilter = false" ng-class="{'hasFilter':showFilter}" ng-swipe-left="showFilter = !showFilter"> 
+      <header>
+        <div class="filter" ng-click="showFilter = !showFilter">
+          <div class="glyphicon glyphicon-list"></div>
+        </div>
+        <div class="title">Receipter</div>
+      </header>
+      <main>
+        <div class="container" ng-view>
+        </div>
+      </main>
+      <footer>
+        <nav class="container">
+          <ul class="nav-buttons">
+            <li menuactive="active">
+              <a href="#/">
+                <span class="glyphicon glyphicon-th-list"></span>
+                <span class="nav-title">Receipts</span>
+              </a>
+              </li>
+            <li menuactive="active">
+              <a href="#/upload">
+                <span class="glyphicon glyphicon-camera"></span>
+                <span class="nav-title">Camera</span>
+              </a>
+            </li>
+          </ul>
+        </nav>
+      </footer>
+    </div>
     <script type="text/javascript" src="cordova.js"></script>
     <script type="text/javascript" src="js/vendor.js"></script>
     <script type="text/javascript" src="js/receipter.js"></script>

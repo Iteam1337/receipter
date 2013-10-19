@@ -17,4 +17,14 @@ describe('AppController', function() {
     expect(controller).to.be.an('Object');
   });
 
+  describe('#filterClients', function () {
+    it('should select a client', function () {
+      var client = 'Iteam';
+
+      scope.filterClients(client);
+
+      expect(scope.selectedClient).to.equal(client);
+    });
+  });
+
 });
