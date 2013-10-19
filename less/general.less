@@ -4,6 +4,7 @@
 
 html, body {
 	-webkit-overflow-scrolling:touch;
+	background: @grey;
 	height:100%;
 	overflow:hidden;
 }
@@ -21,6 +22,10 @@ a {
 		color:@grey;
 		text-decoration:none;
 	}
+}
+
+.container {
+	height:100%;
 }
 
 .filter-list {
@@ -105,6 +110,14 @@ a {
 			top:25px;
 		}
 
+		.next {
+			font-family: 'AvantGarde ExtraLight';
+			font-size:0.8em;
+			position: absolute;
+			right:10px;
+			top:30px;
+		}
+
 		.title {
 			font-family: 'AvantGarde ExtraLight';
 			text-align:center;
@@ -129,7 +142,7 @@ a {
 		-webkit-overflow-scrolling:touch;
 		height:100%;
 		position: relative;
-		padding-bottom:70px;
+		padding-bottom:60px;
 		padding-top:65px;
 		overflow-y:auto;
 	}

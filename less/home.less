@@ -1,5 +1,7 @@
 
 .home {
+  height:100%;
+
   ul.receipts {
 
     img {
@@ -22,11 +24,16 @@
       a {
         display: inline-block;
         padding:10px;
+        width:100%;
       }
 
       .name {
         font-size:1.2em;
         font-weight:bold;
+        overflow:hidden;
+        text-overflow:ellipsis;
+        white-space:nowrap;
+        width:75%;
       }
 
       .date {

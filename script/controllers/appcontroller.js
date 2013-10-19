@@ -73,4 +73,8 @@ angular.module('receipter').controller('AppController', function($scope, notific
       $scope.isCamera = isCamera ? false : true;
   };
 
+  $scope.$on('hasPicture', function () {
+    $scope.hasPicture = true;
+  });
+
 });

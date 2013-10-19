@@ -1,11 +1,120 @@
 
 .upload {
+	height:100%;
   .step {
     display: none;
+    height:100%;
   }
   .active {
     .step {
       display: block;
     }
+  }
+
+  .picture {
+  	position: relative;
+  	height:100%;
+
+  	img {
+  		height:100%;
+  	}
+
+  	.btns {
+  		.translate-pos(-50%, -50%);
+  		left:50%;
+  		position:absolute;
+  		top:50%;
+  		width:100px;
+
+  		.btn {
+  			background:#fff;
+  			color:@grey;
+  			margin-bottom:10px;
+  			padding:10px;
+  			text-align:center;
+
+  			.glyphicon {
+  				font-size:2em;
+  			}
+
+  			.nav-title {
+  				display: block;
+  				font-size:0.6em;
+  				margin-top:10px;
+  				white-space:normal;
+  			}
+  		}
+  	}
+  }
+
+  .info {
+  	padding:20px;
+  }
+
+  label.dropdown {
+  	margin: 0 auto;
+		position: relative;
+		width:100%;
+
+  	&:before {
+			content: '';
+			right: 6px;
+			top: 0px;
+			width: 20px;
+			height: 20px;
+			background: none;
+			position: absolute;
+			pointer-events: none;
+			display: block;
+  	}
+
+  	&:after {
+  		.rotate(90deg);
+
+			content: '<>';
+			font: 11px "Consolas", monospace;
+			color: #AAA;
+			right: 8px;
+			top: 10px;
+			padding: 0 0 2px;
+			border-bottom: 1px solid #DDD;
+			position: absolute;
+			pointer-events: none;
+		}
+
+		select {
+			-webkit-appearance: none;
+			-moz-appearance: none;
+			appearance: none;
+			background: #FFF;
+			border: 1px solid #CCC;
+			color: #888;
+			cursor: pointer;
+			display: inline-block;
+			margin: 0;
+			margin-bottom: 5px;
+			outline: none;
+			padding: 8px;
+			width: 100%;
+		}
+  }
+
+  input,textarea {
+  	.appearance(none);
+
+  	border:1px solid #ccc;
+  	margin-bottom:10px;
+  	padding:10px;
+  	width:100%;
+  }
+
+  .btn {
+  	background:@orange;
+  	border:none;
+  	color:#fff;
+  	font-family: 'AvantGarde ExtraLight';
+  	font-size:1.5em;
+  	text-align:center;
+		width:100%;
   }
 }
