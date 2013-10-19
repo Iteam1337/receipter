@@ -70,6 +70,7 @@ angular.module('receipter').controller('AppController', function($scope, notific
 
   $scope.navigate = function (isCamera) {
       location.href = isCamera ? '#/' : '#/upload';
+      $scope.isCamera = isCamera ? false : true;
   };
 
 });
