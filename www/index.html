@@ -15,8 +15,9 @@
         <li class="add-client" ng-click="addNewClient()">
           <div class="glyphicon glyphicon-plus"></div>
         </li>
-        <li ng-repeat="client in clients | orderBy:'toString()'" ng-click="filterClients(client)">
+        <li ng-repeat="client in data.clients | orderBy:'toString()'" ng-click="filterClients(client)">
           {{client}}
+          <div class="number-of-receipts">{{(data.receipts | filter:{client.name: client}).length}}</div>
         </li>
       </ul>
     </div>

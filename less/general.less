@@ -29,7 +29,7 @@ a {
 	color:#fff;
 	font-size:2em;
 	height:100%;
-	padding-left:40px;
+	padding-left:20px;
 	position:fixed;
 	width:100%;
 
@@ -43,12 +43,21 @@ a {
 		li {
 			margin-bottom:5px;
 			overflow:hidden;
+			position: relative;
 			text-overflow:ellipsis;
 			white-space:nowrap;
 
 			&.add-client {
 				padding-bottom:20px;
 				text-align:center;
+			}
+
+			.number-of-receipts {
+				color:lighten(@grey,20%);
+				font-size:1em;
+				position: absolute;
+				right:10px;
+				top:0;
 			}
 		}
 	}
