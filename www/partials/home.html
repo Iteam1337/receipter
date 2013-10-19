@@ -1,8 +1,6 @@
-<<<<<<< HEAD
 <div class="home row">
-  <h1>My receipts</h1>
   <ul class="receipts">
-    <li ng-repeat="receipt in data.receipts" ng-class="{ active: receipt.selected }">
+    <li ng-repeat="receipt in data.receipts | filter:selectedClient" ng-class="{ active: receipt.selected }">
       <a ng-click="select(receipt)">
         <div class="name">{{receipt.client.name}} | {{receipt.name}}</div>
         <div class="info">{{ receipt.amount | currency:'SEK ' }} | {{receipt.date | date:'yyyy-MM-dd HH:mm:ss' }}</div>
@@ -14,12 +12,3 @@
     </li>
   </ul>
 </div>
-=======
-<ul id="receipts">
-	<li ng-repeat="receipt in receipts | filter:selectedClient">
-		<div class="title">{{receipt.title}}</div>
-		<div class="date">{{receipt.date}}</div>
-		<div class="client">{{receipt.client}}</div>
-	</li>
-</ul>
->>>>>>> 016aa75910f5b0be351a17df982679dcad62f192

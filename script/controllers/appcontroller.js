@@ -41,4 +41,10 @@ angular.module('receipter').controller('AppController', function($scope) {
     ]
   };
 
+  $scope.clients = ['TRR', 'Radical FM', 'Iteam'];
+
+  $scope.filterClients = function (client) {
+    $scope.selectedClient = client;
+  };
+
 });
