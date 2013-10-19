@@ -12,7 +12,10 @@
   <body ng-controller="AppController">
     <div class="filter-list ng-cloak" ng-show="showFilter">
       <ul>
-        <li ng-repeat="client in clients" ng-click="filterClients(client)">
+        <li class="add-client" ng-click="addNewClient()">
+          <div class="glyphicon glyphicon-plus"></div>
+        </li>
+        <li ng-repeat="client in clients | orderBy:'toString()'" ng-click="filterClients(client)">
           {{client}}
         </li>
       </ul>
