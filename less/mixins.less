@@ -62,3 +62,12 @@
 	-webkit-transform-style: preserve-3d; /* Safari and Chrome */
 			transform-style: preserve-3d;
 }
+
+.blur(@radius:20px) {
+  -webkit-filter: blur(@radius) contrast(0.4) brightness(1.4);
+  -moz-filter: blur(@radius) contrast(0.4) brightness(1.4);
+  -o-filter: blur(@radius) contrast(0.4) brightness(1.4);
+  -ms-filter: blur(@radius) contrast(0.4) brightness(1.4);
+  filter: blur(@radius) contrast(0.4) brightness(1.4);
+  clip: rect(520px 573px 516px 351px);
+}

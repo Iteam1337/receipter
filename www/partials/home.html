@@ -1,4 +1,4 @@
-<div class="home row" ng-swipe-left="showFilter()" ng-swipe-right="showFilter()">
+<div class="home row" ng-swipe-left="navigate()" ng-swipe-right="showFilter()">
   <ul class="receipts">
     <li ng-repeat="receipt in data.receipts | filter:{client.name: selectedClient} | orderBy:'-date'" ng-class="{ active: receipt.selected }">
       <a ng-click="select(receipt)">
@@ -7,7 +7,7 @@
         <span class="date">{{receipt.moment}}</span>
       </a>
       <div class="details">
-        <img src="{{receipt.image}}" />
+        <img ng-src="{{receipt.image}}" />
         <div class="note">{{receipt.note}}</div>
       </div>
     </li>

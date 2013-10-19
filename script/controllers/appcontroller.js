@@ -59,9 +59,11 @@ angular.module('receipter').controller('AppController', function($scope, notific
     if (navigator.notification) {
       notification.prompt("", function (clientName) {
         $scope.data.clients.push(clientName);
-      }, "Add a new client", "", "");
+      }, "Add a new client", null, null);
     } else {
-      var clientName = prompt("Add a new client","","");
+      var clientName = prompt("",function (clientName) {
+        $scope.data.clients.push(clientName);
+      },"Add a new client","", "");
       $scope.data.clients.push(clientName);
     }
   };

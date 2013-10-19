@@ -36,7 +36,7 @@ angular.module('receipter').service('notification', function($window, $rootScope
             callback.apply(self, args);
           });
         }
-      }, title, buttomLabels, defaultText);
+      }, title, buttonLabels, defaultText);
     },
     beep: function(times) {
       $window.navigator.notification.beep(times);

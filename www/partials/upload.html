@@ -21,7 +21,7 @@
       <li class="client" ng-class="{ active: step=='client' }">
         <div class="name">Select client</div>
         <div class="step">
-          <input type="text" name="client" ng-model="receipt.client.name" />
+          <select ng-options="client.client.name for client in data.receipts" ng-model="receipt.client.name"></select>
           <button class="btn" ng-click="gotoStep('note')">Next</button>
         </div>
       </li>
