@@ -68,8 +68,8 @@ angular.module('receipter').controller('AppController', function($scope, notific
     }
   };
 
-  $scope.$on('iscamera', function (event, isCamera) {
-    $scope.isCamera = isCamera;
-  });
+  $scope.navigate = function (isCamera) {
+      location.href = isCamera ? '#/' : '#/upload';
+  };
 
 });
