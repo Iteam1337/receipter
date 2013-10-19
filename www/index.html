@@ -10,7 +10,7 @@
     <title>Receipter</title>
   </head>
   <body ng-controller="AppController">
-    <div class="filter-list ng-cloak" ng-show="filterView" ng-swipe-left="showfilter()">
+    <div class="filter-list ng-cloak" ng-show="filterView" ng-swipe-left="showFilter()">
       <ul>
         <li class="add-client" ng-click="addNewClient()">
           <div class="glyphicon glyphicon-plus"></div>
@@ -20,9 +20,9 @@
         </li>
       </ul>
     </div>
-    <div class="main-view" ng-swipe-right="showfilter()" ng-init="showFilter = false" ng-class="{'hasFilter':showFilter}" ng-swipe-left="showfilter()"> 
+    <div class="main-view" ng-swipe-right="showFilter()" ng-class="{'hasFilter':filterView}" ng-swipe-left="showFilter()"> 
       <header>
-        <div class="filter" ng-click="showfilter()">
+        <div class="filter" ng-click="showFilter()">
           <div class="glyphicon glyphicon-list"></div>
         </div>
         <div class="title">Receipter</div>

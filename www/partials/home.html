@@ -1,6 +1,6 @@
 <div class="home row">
   <ul class="receipts">
-    <li ng-repeat="receipt in data.receipts | filter:selectedClient" ng-class="{ active: receipt.selected }">
+    <li ng-repeat="receipt in data.receipts | filter:{client.name: selectedClient}" ng-class="{ active: receipt.selected }">
       <a ng-click="select(receipt)">
         <div class="name">{{receipt.client.name}} | {{receipt.name}}</div>
         <div class="info">{{ receipt.amount | currency:'SEK ' }}</div>
