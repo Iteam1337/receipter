@@ -103,7 +103,7 @@ module.exports = function(grunt) {
     copy: {
       ios: {
         files: [
-          {expand: true, src: ['www/**'], dest: 'platforms/ios/'}, // includes files in path and its subdirs
+          { expand: true, src: ['www/css/', 'www/fonts/', 'www/img/', 'www/js/', 'www/**/*.html'], dest: 'platforms/ios/' }, // includes files in path and its subdirs
         ]
       }
     },
