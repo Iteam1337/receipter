@@ -1,4 +1,12 @@
-<div class="home row" ng-swipe-left="navigate()" ng-swipe-right="showFilter()">
+<div class="home row" ng-swipe-left="navigate()" ng-swipe-right="showClientsListView()">
+  <header>
+    <div class="filter">
+      <a href="#/receipts?clients">
+        <div class="glyphicon glyphicon-list"></div>
+      </a>
+    </div>
+    <div class="title">Receipter</div>
+  </header>
   <ul class="receipts">
     <li ng-repeat="receipt in receipts | orderBy:'-date'" ng-class="{ active: receipt.selected }">
       <a ng-href="#/receipts/{{receipt.selected ? '' : receipt.id }}">
@@ -12,4 +20,22 @@
       </div>
     </li>
   </ul>
+  <footer>
+    <nav>
+      <ul class="nav-buttons">
+        <li menuactive="active">
+          <a href="#/receipts">
+            <span class="glyphicon glyphicon-th-list"></span>
+            <span class="nav-title">Receipts</span>
+          </a>
+          </li>
+        <li menuactive="active">
+          <a href="#/upload">
+            <span class="glyphicon glyphicon-camera"></span>
+            <span class="nav-title">Camera</span>
+          </a>
+        </li>
+      </ul>
+    </nav>
+  </footer>
 </div>

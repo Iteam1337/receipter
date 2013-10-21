@@ -3,6 +3,12 @@
   height:100%;
 
   ul.receipts {
+    -webkit-overflow-scrolling:touch;
+    height:445px;
+    margin-bottom:60px;
+    margin-top:65px;
+    overflow-y:scroll;
+    overflow-x:hidden;
 
     img {
       max-width: 100%;
@@ -18,8 +24,11 @@
     }
 
     li {
-      border-bottom:1px solid #eee;
       position: relative;
+
+      &:not(:last-child) {
+        border-bottom:1px solid #eee;
+      }
 
       a {
         display: inline-block;

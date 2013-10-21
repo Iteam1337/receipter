@@ -69,4 +69,8 @@ angular.module('receipter').controller('AppController', function($scope, $locati
 
   $scope.toggleMenu = '?clients';
 
+  $scope.closeFilter = function () {
+    $location.search('');
+  };
+
 });
