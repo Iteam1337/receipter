@@ -103,7 +103,9 @@ module.exports = function(grunt) {
     copy: {
       ios: {
         files: [
-          { expand: true, src: ['www/css/', 'www/fonts/', 'www/img/', 'www/js/', 'www/**/*.html'], dest: 'platforms/ios/' }, // includes files in path and its subdirs
+          { expand: true, src: ['www/**'], dest: 'platforms/ios/' }, // includes files in path and its subdirs
+          { expand: true, cwd: 'Resources/icon/ios/', src: [ '*' ], dest: 'platforms/ios/Receipter/Resources/icons/', flatten: true, filter: 'isFile' },
+          { expand: true, cwd: 'Resources/screen/ios/', src: [ '*' ], dest: 'platforms/ios/Receipter/Resources/splash/', flatten: true, filter: 'isFile' }
         ]
       }
     },
@@ -124,7 +126,7 @@ module.exports = function(grunt) {
     // watches changes to the file system to rerun tasks
     watch: {
       www: {
-        files: ['www/**/*.*'],
+        files: ['www/**/*.*', 'Resources/**/*'],
         tasks: ['copy'],
         options: {
           spawn: false,
@@ -152,8 +154,8 @@ module.exports = function(grunt) {
         tasks: ['test']
       },
       plugins: {
-        files: ['plugins/**/*'],
-        tasks: ['shell:build']
+        files: ['plugins/**/*', 'www/config.xml'],
+        tasks: ['shell:build', 'copy']
       }
     }
   });
@@ -170,6 +172,6 @@ module.exports = function(grunt) {
 
   // Default task(s).
   grunt.registerTask('test', ['jshint', 'mocha']);
-  grunt.registerTask('build', ['less', 'concat', 'shell:build']);
+  grunt.registerTask('build', ['less', 'concat', 'shell:build', 'copy']);
   grunt.registerTask('default', ['test', 'build', 'connect', 'watch']);
 };
