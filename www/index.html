@@ -10,32 +10,36 @@
     <title>Receipter</title>
   </head>
   <body ng-controller="AppController">
-    <div class="filter-list ng-cloak" ng-show="filterView" ng-swipe-left="showFilter()" shrink>
+    
+    <div class="filter-list ng-cloak" ng-show="clientsListView" ng-swipe-left="showClientsListView()" shrink>
       <ul>
         <li class="add-client" ng-click="addNewClient()">
           <div class="glyphicon glyphicon-plus"></div>
         </li>
-        <li ng-repeat="client in data.clients | orderBy:'toString()'" ng-click="filterClients(client)">
-          {{client}}
-          <div class="number-of-receipts">{{(data.receipts | filter:{client.name: client}).length}}</div>
+        <li ng-repeat="client in data.clients | orderBy:'name.toString()'">
+          <a ng-href="#/receipts/?client={{client.name.toLowerCase()}}">{{client.name}}</a>
+          <div class="number-of-receipts">{{(data.receipts | filter:{client.name: client.name}).length}}</div>
         </li>
       </ul>
     </div>
-    <div class="main-view" ng-class="{'hasFilter':filterView}">
-      <div class="swipefix" ng-swipe-left="showFilter()" ng-click="showFilter()" ng-show="filterView"></div>
+    
+    <div class="main-view" ng-class="{'hasFilter':clientsListView}">
+      <div class="swipefix" ng-swipe-left="showClientsListView()" ng-click="showClientsListView()" ng-show="clientsListView"></div>
+      
       <header>
-        <div class="filter" ng-click="showFilter()" ng-hide="isCamera">
-          <div class="glyphicon glyphicon-list"></div>
+        <div class="filter">
+          <a href="#/receipts?clients"><span class="glyphicon glyphicon-list"></span>
         </div>
         <div class="title">Receipter</div>
         <div class="next" ng-show="hasPicture">
           Next
         </div>
       </header>
+
       <main>
-        <div class="container" ng-view>
-        </div>
+        <div class="container" ng-view></div>
       </main>
+
       <footer>
         <nav class="container">
           <ul class="nav-buttons">
@@ -54,6 +58,7 @@
           </ul>
         </nav>
       </footer>
+
     </div>
     <script type="text/javascript" src="cordova.js"></script>
     <script type="text/javascript" src="js/vendor.js"></script>

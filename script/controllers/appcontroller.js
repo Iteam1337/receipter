@@ -1,5 +1,5 @@
 
-angular.module('receipter').controller('AppController', function($scope, notification) {
+angular.module('receipter').controller('AppController', function($scope, $location, $window, notification) {
 
   'use strict';
 
@@ -41,40 +41,32 @@ angular.module('receipter').controller('AppController', function($scope, notific
         amount: 645,
         note: 'IPA FTW!'
       }
-    ],
-    clients: ['TRR', 'Radical FM', 'Iteam']
+    ]
   };
 
-  $scope.filterView = false;
+  $scope.$watch('data.receipts', function() {
+    $scope.data.clients = $scope.data.receipts
+      .map(function(r) {
+        return r.client;
+      });
+  });
 
-  $scope.filterClients = function (client) {
-    $scope.selectedClient = client;
-  };
-
-  $scope.showFilter = function () {
-    $scope.filterView = $scope.filterView ? false : true;
-  };
+  $scope.$on('$routeChangeSuccess', function() {
+    $scope.clientsListView = $location.search().clients;
+  });
 
   $scope.addNewClient = function () {
     if (navigator.notification) {
-      notification.prompt("", function (clientName) {
+      notification.prompt("New", function (clientName) {
         $scope.data.clients.push(clientName);
       }, "Add a new client", null, null);
     } else {
-      var clientName = prompt("",function (clientName) {
+      $window.prompt("Add a new client", function (clientName) {
         $scope.data.clients.push(clientName);
-      },"Add a new client","", "");
-      $scope.data.clients.push(clientName);
+      });
     }
   };
 
-  $scope.navigate = function (isCamera) {
-      location.href = isCamera ? '#/' : '#/upload';
-      $scope.isCamera = isCamera ? false : true;
-  };
-
-  $scope.$on('hasPicture', function () {
-    $scope.hasPicture = true;
-  });
+  $scope.toggleMenu = '?clients';
 
 });

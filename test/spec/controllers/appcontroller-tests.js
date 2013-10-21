@@ -17,7 +17,15 @@ describe('AppController', function() {
     expect(controller).to.be.an('Object');
   });
 
-  describe('#filterClients', function () {
+  describe('clients', function() {
+    it('updates client list when receipts change', function() {
+      scope.data.receipts = [{ client: { name: 'TRR' } }, { client: { name: 'RadicalFM' } }];
+      scope.$digest();
+      expect(scope.data.clients).to.eql([ { name: 'TRR' }, { name: 'RadicalFM' } ]);
+    });
+  });
+
+  /*describe('#filterClients', function () {
     it('should select a client', function () {
       var client = 'Iteam';
 
@@ -34,6 +42,6 @@ describe('AppController', function() {
 
       expect(scope.filterView).to.equal(true);
     });
-  });
+  });*/
 
 });
