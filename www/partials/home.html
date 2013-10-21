@@ -1,7 +1,7 @@
 <div class="home row" ng-swipe-left="navigate()" ng-swipe-right="showFilter()">
   <ul class="receipts">
     <li ng-repeat="receipt in data.receipts | filter:{client.name: selectedClient} | orderBy:'-date'" ng-class="{ active: receipt.selected }">
-      <a ng-click="select(receipt)">
+      <a ng-href="#/receipts/{{receipt.id}}">
         <div class="name">{{receipt.client.name}} | {{receipt.name}}</div>
         <div class="info">{{ receipt.amount | currency:'SEK ' }}</div>
         <span class="date">{{receipt.moment}}</span>

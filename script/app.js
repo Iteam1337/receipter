@@ -7,7 +7,11 @@ angular
     $locationProvider.html5Mode(false);
 
     $routeProvider
-      .when('/', {
+      .when('/receipts', {
+        templateUrl: 'partials/home.html',
+        controller: 'HomeController'
+      })
+      .when('/receipts/:id', {
         templateUrl: 'partials/home.html',
         controller: 'HomeController'
       })
@@ -16,6 +20,6 @@ angular
         controller: 'UploadController'
       })
       .otherwise({
-        redirectTo: '/'
+        redirectTo: '/receipts'
       });
   });
