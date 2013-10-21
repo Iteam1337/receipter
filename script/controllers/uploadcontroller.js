@@ -39,9 +39,11 @@ angular.module('receipter').controller('UploadController', function($scope, noti
     $location.path('/');
   };
 
-  $scope.$watch('receipt', function () {
+  $scope.hasPicture = false;
+
+  $scope.$watch('receipt.image', function () {
     if ($scope.receipt.image !== 'img/shutter.png') {
-      $scope.$emit('hasPicture');
+      $scope.hasPicture = true;
     }
   });
 

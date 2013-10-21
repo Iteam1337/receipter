@@ -1,0 +1,20 @@
+.slide.ng-enter,
+.slide.ng-leave {
+  -webkit-transition:0.5s linear all;
+  -moz-transition:0.5s linear all;
+  -o-transition:0.5s linear all;
+  transition:0.5s linear all;
+}
+ 
+.slide.ng-enter {
+	.translate3d(100%,0,0);
+}        /* starting animations for enter */
+.slide.ng-enter-active {
+	.translate3d(0,0,0);
+} /* terminal animations for enter */
+.slide.ng-leave {
+	.translate3d(0,0,0);
+}        /* starting animations for leave */
+.slide.ng-leave-active {
+	.translate3d(-100%,0,0);
+} /* terminal animations for leave */

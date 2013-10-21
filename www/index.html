@@ -23,37 +23,10 @@
     </div>
     <div class="main-view" ng-class="{'hasFilter':filterView}">
       <div class="swipefix" ng-swipe-left="showFilter()" ng-click="showFilter()" ng-show="filterView"></div>
-      <header>
-        <div class="filter" ng-click="showFilter()" ng-hide="isCamera">
-          <div class="glyphicon glyphicon-list"></div>
-        </div>
-        <div class="title">Receipter</div>
-        <div class="next" ng-show="hasPicture">
-          Next
-        </div>
-      </header>
       <main>
-        <div class="container" ng-view>
+        <div class="container slide" ng-view>
         </div>
       </main>
-      <footer>
-        <nav class="container">
-          <ul class="nav-buttons">
-            <li menuactive="active">
-              <a href="#/">
-                <span class="glyphicon glyphicon-th-list"></span>
-                <span class="nav-title">Receipts</span>
-              </a>
-              </li>
-            <li menuactive="active">
-              <a href="#/upload">
-                <span class="glyphicon glyphicon-camera"></span>
-                <span class="nav-title">Camera</span>
-              </a>
-            </li>
-          </ul>
-        </nav>
-      </footer>
     </div>
     <script type="text/javascript" src="cordova.js"></script>
     <script type="text/javascript" src="js/vendor.js"></script>

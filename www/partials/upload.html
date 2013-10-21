@@ -1,9 +1,15 @@
 <div class="upload row" ng-swipe-right="navigate(true)">
-  <ol class="steps">
+  <header>
+    <div class="title">Receipter</div>
+    <div class="next" ng-show="hasPicture" ng-click="gotoStep('info')">
+      Next
+    </div>
+  </header>
+  <ul class="steps">
     <li class="picture" ng-class="{ active: step=='picture' }">
       <div class="step">
         <img ng-src="{{receipt.image}}" width="100%" />
-        <div class="btns">
+        <div class="btns" ng-hide="hasPicture">
           <button class="btn" ng-click="newPicture()">
             <span class="glyphicon glyphicon-camera"></span>
             <span class="nav-title">New picture</span>
@@ -29,4 +35,22 @@
       </div>
     </li>
   </ul>
+  <footer>
+    <nav>
+      <ul class="nav-buttons">
+        <li menuactive="active">
+          <a href="#/">
+            <span class="glyphicon glyphicon-th-list"></span>
+            <span class="nav-title">Receipts</span>
+          </a>
+          </li>
+        <li menuactive="active">
+          <a href="#/upload">
+            <span class="glyphicon glyphicon-camera"></span>
+            <span class="nav-title">Camera</span>
+          </a>
+        </li>
+      </ul>
+    </nav>
+  </footer>
 </div>
