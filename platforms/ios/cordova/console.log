@@ -1,0 +1,21 @@
+2013-10-18 16:19:14.426 Receipter[56358:a0b] Multi-tasking -> Device: YES, App: YES
+2013-10-18 16:19:14.482 Receipter[56358:a0b] Unlimited access to network resources
+2013-10-18 16:19:14.742 Receipter[56358:a0b] CDVPlugin class CDVSplashScreen (pluginName: splashscreen) does not exist.
+2013-10-18 16:19:14.742 Receipter[56358:a0b] [CDVTimer][splashscreen] 0.610054ms
+2013-10-18 16:19:14.743 Receipter[56358:a0b] [CDVTimer][TotalPluginStartup] 1.280010ms
+2013-10-18 16:19:14.981 Receipter[56358:a0b] Resetting plugins due to page load.
+2013-10-18 16:19:15.062 Receipter[56358:a0b] Finished load of: file:///Users/administrator/Library/Application%20Support/iPhone%20Simulator/7.0/Applications/EE057BD1-DB92-4340-9F9B-5561AC0D401B/Receipter.app/www/index.html
+2013-10-18 16:31:13.342 Receipter[59837:a0b] Multi-tasking -> Device: YES, App: YES
+2013-10-18 16:31:13.355 Receipter[59837:a0b] Unlimited access to network resources
+2013-10-18 16:31:13.396 Receipter[59837:a0b] CDVPlugin class CDVSplashScreen (pluginName: splashscreen) does not exist.
+2013-10-18 16:31:13.421 Receipter[59837:a0b] [CDVTimer][splashscreen] 24.919987ms
+2013-10-18 16:31:13.425 Receipter[59837:a0b] [CDVTimer][TotalPluginStartup] 29.453993ms
+2013-10-18 16:31:13.746 Receipter[59837:a0b] Resetting plugins due to page load.
+2013-10-18 16:31:14.026 Receipter[59837:a0b] Finished load of: file:///Users/administrator/Library/Application%20Support/iPhone%20Simulator/7.0/Applications/EE057BD1-DB92-4340-9F9B-5561AC0D401B/Receipter.app/www/index.html#/
+2013-10-19 13:49:31.277 Receipter[74147:a0b] Multi-tasking -> Device: YES, App: YES
+2013-10-19 13:49:31.337 Receipter[74147:a0b] Unlimited access to network resources
+2013-10-19 13:49:31.595 Receipter[74147:a0b] CDVPlugin class CDVSplashScreen (pluginName: splashscreen) does not exist.
+2013-10-19 13:49:31.596 Receipter[74147:a0b] [CDVTimer][splashscreen] 0.589013ms
+2013-10-19 13:49:31.597 Receipter[74147:a0b] [CDVTimer][TotalPluginStartup] 1.337051ms
+2013-10-19 13:49:31.946 Receipter[74147:a0b] Resetting plugins due to page load.
+2013-10-19 13:49:32.248 Receipter[74147:a0b] Finished load of: file:///Users/administrator/Library/Application%20Support/iPhone%20Simulator/7.0/Applications/EE057BD1-DB92-4340-9F9B-5561AC0D401B/Receipter.app/www/index.html#/

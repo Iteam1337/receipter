@@ -1,5 +1,6 @@
 
 .steps {
+  background:#333;
   height: 445px;
   margin-bottom: 60px;
   margin-top: 65px;
@@ -78,11 +79,11 @@
 
 			content: '<>';
 			font: 11px "Consolas", monospace;
-			color: #AAA;
+			color: #666;
 			right: 8px;
 			top: 10px;
 			padding: 0 0 2px;
-			border-bottom: 1px solid #DDD;
+			border-bottom: 1px solid #666;
 			position: absolute;
 			pointer-events: none;
 		}
@@ -91,9 +92,9 @@
 			-webkit-appearance: none;
 			-moz-appearance: none;
 			appearance: none;
-			background: #FFF;
-			border: 1px solid #CCC;
-			color: #888;
+			background: #222;
+			border: 1px solid #1d1d1d;
+			color: #ccc;
 			cursor: pointer;
 			display: inline-block;
 			margin: 0;
@@ -106,8 +107,11 @@
 
   input,textarea {
   	.appearance(none);
+    .double-box-shadow(inset 0px 1px 0px rgba(33,33,33,0.8), 0px 1px 0px rgba(255,255,255,0.15));
 
-  	border:1px solid #ccc;
+    background:#222;
+  	border:1px solid #1d1d1d;
+    color:#ccc;
   	margin-bottom:10px;
   	padding:10px;
   	width:100%;
