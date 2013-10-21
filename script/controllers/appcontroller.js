@@ -73,4 +73,16 @@ angular.module('receipter').controller('AppController', function($scope, $locati
     $location.search('');
   };
 
+  $scope.showFilter = function () {
+    $location.search('clients');
+  };
+
+  $scope.navigate = function (isCamera) {
+    if (isCamera) {
+      $location.path('/');
+    } else {
+      $location.path('/upload');
+    }
+  };
+
 });
