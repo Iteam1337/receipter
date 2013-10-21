@@ -3,7 +3,4 @@
 *.pbxuser
 .DS_Store
 build
-cordova
-CordovaLib
-Receipter.xcodeproj
-www
+www/phonegap.js
