@@ -26,7 +26,7 @@
         <input type="text" name="name" ng-model="receipt.name" placeholder="Name"/>
         <input type="text" pattern="\d*" name="amount" ng-model="receipt.amount" placeholder="Amount"/>
         <label for="" class="dropdown">
-          <select ng-options="client.client.name for client in data.receipts" ng-model="receipt.client.name">
+          <select ng-options="client.name for client in data.clients" ng-model="receipt.client">
             <option value="">Client</option>
           </select>
         </label>

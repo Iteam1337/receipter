@@ -39,6 +39,16 @@ describe('UploadController', function() {
     it('sets image to img/shutter.png as default', function() {
       expect(scope.receipt.image).to.equal('img/shutter.png');
     });
+    describe('upload()', function() {
+      it('gives the new receipt an id by adding to existing max', function() {
+        scope.receipt = {};
+        scope.data = { receipts: [ { id: 1 }, { id: 2 } ] };
+        scope.upload();
+
+        expect(scope.data.receipts).to.have.length(3);
+        expect(scope.data.receipts[2].id).to.equal(3);
+      });
+    });
 
     describe('picture', function() {
 

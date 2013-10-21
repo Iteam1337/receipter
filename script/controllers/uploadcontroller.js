@@ -32,6 +32,9 @@ angular.module('receipter').controller('UploadController', function($scope, noti
 
   $scope.upload = function() {
     $scope.receipt.date = new Date();
+    $scope.receipt.id = $scope.data.receipts.reduce(function(max, cur) {
+      return Math.max(max, cur.id);
+    }, 0) + 1;
     $scope.data.receipts.push($scope.receipt);
     $scope.receipt = {
       image: 'img/shutter.png'

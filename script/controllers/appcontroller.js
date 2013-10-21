@@ -45,10 +45,12 @@ angular.module('receipter').controller('AppController', function($scope, $locati
   };
 
   $scope.$watch('data.receipts', function() {
-    $scope.data.clients = $scope.data.receipts
-      .map(function(r) {
-        return r.client;
-      });
+    if(!$scope.data.clients) {
+      $scope.data.clients = $scope.data.receipts
+        .map(function(r) {
+          return r.client;
+        });
+    }
   });
 
   $scope.$on('$routeChangeSuccess', function() {
@@ -56,15 +58,12 @@ angular.module('receipter').controller('AppController', function($scope, $locati
   });
 
   $scope.addNewClient = function () {
-    if (navigator.notification) {
-      notification.prompt("New", function (clientName) {
-        $scope.data.clients.push(clientName);
-      }, "Add a new client", null, null);
-    } else {
-      $window.prompt("Add a new client", function (clientName) {
-        $scope.data.clients.push(clientName);
-      });
-    }
+    notification.prompt("Type the name of the new client", function (response) {
+      if(response.buttonIndex === 1) {
+        $scope.data.clients.push({ name: response.input1 });
+      }
+      
+    }, "Add a new client", ["ADD IT!", "NOPE"], "client");
   };
 
   $scope.closeFilter = function () {
