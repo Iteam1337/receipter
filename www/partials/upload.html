@@ -1,7 +1,7 @@
 <div class="upload row" ng-swipe-right="navigate(true)">
   <header>
     <div class="title">Receipter</div>
-    <div class="next" ng-show="hasPicture" ng-click="gotoStep('info')">
+    <div class="next" ng-show="hasPicture && step != 'info'" ng-click="gotoStep('info')">
       Next
     </div>
   </header>
