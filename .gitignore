@@ -5,6 +5,9 @@ www/css
 www/js
 www/cordova-app-hello-world*
 
+platforms/**
+plugins/**
+
 # Xcode
 .DS_Store
 */build/*
@@ -26,5 +29,3 @@ DerivedData
 
 #CocoaPods
 Pods
-
-platforms/**

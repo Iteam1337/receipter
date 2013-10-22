@@ -1,7 +1,6 @@
 {
   "name": "receipter",
-  "version": "0.0.0",
-  "description": "receipter =========",
+  "version": "0.1.0",
   "main": "index.js",
   "scripts": {
     "postinstall": "node node_modules/bower/bin/bower install",
