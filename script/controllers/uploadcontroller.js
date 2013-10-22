@@ -1,5 +1,5 @@
 
-angular.module('receipter').controller('UploadController', function($scope, notification, $location) {
+angular.module('receipter').controller('UploadController', function($scope, $location) {
   'use strict';
 
   $scope.receipt = {
@@ -33,7 +33,7 @@ angular.module('receipter').controller('UploadController', function($scope, noti
   });
 
 
-
+  /*
   var success = function(data) {
     $scope.receipt.image = 'data:image/jpeg;base64,' + data;
     camera.cleanup();
@@ -51,5 +51,5 @@ angular.module('receipter').controller('UploadController', function($scope, noti
   $scope.pictureFromLibrary = function() {
     camera.getPicture(success, fail, { sourceType: camera.PictureSourceType.SAVEDPHOTOALBUM });
   };
-
+  */
 });
