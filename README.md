@@ -35,13 +35,13 @@ your phone and uploading them.
 
         npm install
 
-4. Add build platform (in this example ios)
-
-        cordova platform add ios
-
-5. Install Cordova plugins
+4. Install Cordova plugins
 
         cordova plugin add org.apache.cordova.dialogs org.apache.cordova.splashscreen org.apache.cordova.camera
+
+5. Add build platform (in this example ios)
+
+        cordova platform add ios
 
 6. Run the build
 
