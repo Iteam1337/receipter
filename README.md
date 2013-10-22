@@ -29,7 +29,7 @@ your phone and uploading them.
 
 2. Clone the repo
 
-        git clone git@github.com:Iteam1337/receipter.git & cd receipter
+        git clone git@github.com:Iteam1337/receipter.git && cd receipter
 
 3. Install dependencies
 
