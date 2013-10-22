@@ -16,7 +16,7 @@ your phone and uploading them.
 
 2. Grunt
 
-    npm install -g grunt-cli
+        npm install -g grunt-cli
 
 3. XCode >= 5.0 (for ios development)
 
@@ -25,26 +25,26 @@ your phone and uploading them.
 
 1. Install Cordova
 
-    npm install -g cordova
+        npm install -g cordova
 
 2. Clone the repo
 
-    git clone git@github.com:Iteam1337/receipter.git & cd receipter
+        git clone git@github.com:Iteam1337/receipter.git & cd receipter
 
 3. Install dependencies
 
-    npm install
+        npm install
 
 4. Add build platform (in this example ios)
 
-    cordova platform add ios
+        cordova platform add ios
 
 5. Install Cordova plugins
 
-    cordova plugin add org.apache.cordova.dialogs org.apache.cordova.splashscreen org.apache.cordova.camera
+        cordova plugin add org.apache.cordova.dialogs org.apache.cordova.splashscreen org.apache.cordova.camera
 
 6. Run the build
 
-    grunt
+        grunt
 
 7. Open platforms/ios/Receipter.xcodeproj in Xcode
