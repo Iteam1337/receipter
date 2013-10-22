@@ -1,5 +1,5 @@
 
-angular.module('receipter').controller('UploadController', function($scope, notification, camera, $location) {
+angular.module('receipter').controller('UploadController', function($scope, notification, $location) {
   'use strict';
 
   $scope.receipt = {
@@ -7,24 +7,6 @@ angular.module('receipter').controller('UploadController', function($scope, noti
   };
 
   $scope.step = 'picture';
-
-  var success = function(data) {
-    $scope.receipt.image = 'data:image/jpeg;base64,' + data;
-    camera.cleanup();
-  };
-
-  var fail = function(info) {
-    notification.alert(info, function() {}, 'Something went wrong', 'Oh darn!');
-    camera.cleanup();
-  };
-
-  $scope.newPicture = function() {
-    camera.getPicture(success, fail);
-  };
-
-  $scope.pictureFromLibrary = function() {
-    camera.getPicture(success, fail, { sourceType: camera.PictureSourceType.SAVEDPHOTOALBUM });
-  };
 
   $scope.gotoStep = function(step) {
     $scope.step = step;
@@ -49,5 +31,25 @@ angular.module('receipter').controller('UploadController', function($scope, noti
       $scope.hasPicture = true;
     }
   });
+
+
+
+  var success = function(data) {
+    $scope.receipt.image = 'data:image/jpeg;base64,' + data;
+    camera.cleanup();
+  };
+
+  var fail = function(info) {
+    notification.alert(info, function() {}, 'Something went wrong', 'Oh darn!');
+    camera.cleanup();
+  };
+
+  $scope.newPicture = function() {
+    camera.getPicture(success, fail);
+  };
+
+  $scope.pictureFromLibrary = function() {
+    camera.getPicture(success, fail, { sourceType: camera.PictureSourceType.SAVEDPHOTOALBUM });
+  };
 
 });
