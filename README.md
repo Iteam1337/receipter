@@ -6,6 +6,7 @@ Receipter is an example Phonegap/Cordova app used to demo app development using
 HTML/CSS/JS for STHLM.JS.
 
 The talk is here: http://bambuser.com/v/4032987#t=5700s
+
 And the slides are here: https://www.dropbox.com/s/it1xu2sw70eoom7/STHLM.JS.pdf
 
 The idea for the app is to simplify handling of receipts by taking pictures of them with
